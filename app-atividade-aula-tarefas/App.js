@@ -1,33 +1,37 @@
-import { StyleSheet, View, TextInput, Button, Text } from 'react-native';
-import { rotulo_btn_cadastro_meta, rotulo_input_meta, rotulo_lista_metas } from './mensagens';
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import MetaInput from './components/MetaInput';
+import MetaList from './components/MetaList';
 
 export default function App() {
+  const [inputMetaText, setInputMetaText] = useState('');
+  const [metas, setMetas] = useState([]);
+
+  function metaInputHandler(inputText) {
+    setInputMetaText(inputText);
+  }
+
+  function adicionarMetaHandler() {
+    setMetas((currentMetas) => [...currentMetas, inputMetaText]);
+    setInputMetaText('');
+  }
+
   return (
-    <View style={styles.mainContainer}>
-      <View>
-        <View>
-        <TextInput style={styles.inputText}
-                placeholder={rotulo_input_meta} />
-        </View>
-      <View>
-        <Button title={rotulo_btn_cadastro_meta} />
-      </View>
-    </View>
-
-    <View>
-      <Text>title={rotulo_lista_metas}</Text>
-    </View>
-
+    <View style={styles.appContainer}>
+      <MetaInput 
+        onInputChange={metaInputHandler} 
+        onAddMeta={adicionarMetaHandler}
+        inputValue={inputMetaText}
+      />
+      <MetaList metas={metas} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  mainContainer: {
-    padding: 30,
-  },
-  inputText:{
-    borderColor: '#cccc',
-    borderWidth: 1
+  appContainer: {
+    flex: 1,
+    paddingTop: 50,
+    paddingHorizontal: 16,
   },
 });
