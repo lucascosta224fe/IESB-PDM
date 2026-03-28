@@ -19,7 +19,7 @@ function BottomTabScreen(){
   return(
     <Tab.Navigator
     screenOptions={{headerRight: () => <IconButton
-    icon="add" size={24} onPress={()=>{}} /> }} >
+    icon="add" size={24} onPress={()=>{navigation.navigate('GerenciarDespesa');}} /> }} >
       <Tab.Screen name="Despesa Recente" component={DespesaRecente}
       options={{tabBarIcon: ({color,size}) => (<Ionicons name="hourglass"
       size={size} color={color} />),

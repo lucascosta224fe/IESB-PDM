@@ -20,7 +20,6 @@ function DespesaItem({item}){
             </View>
         </Pressable>
     )
-
 }
 
 export default DespesaItem;
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
     padding: 5,
     marginVertical: 5,
     marginHorizontal: 5,
-    backgroundColor: '#fff',
+    backgroundColor: '#bdbdbd',
     flexDirection: 'row',
   },
   itemText: {

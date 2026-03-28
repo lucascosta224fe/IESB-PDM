@@ -1,5 +1,5 @@
-import {Text} from 'react-native'
 import DespesaSaida from '../components/despesa/DespesaSaida'
+
 function TodasDespesas(){
 
     const DUMMY_DESPESAS = [
