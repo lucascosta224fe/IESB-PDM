@@ -1,5 +1,5 @@
 // services/api.js
-const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? "http://192.168.15.49:3000";
+const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? "http://10.0.2.2:3000";
 
 async function request(path, options = {}) {
   const response = await fetch(`${BASE_URL}${path}`, {
